@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 node_modules
 package-lock.json
 .vscode
 .DS_Store
 © 2021 GitHub, Inc.
+=======
+node_modules
+package-lock.json
+.vscode
+.DS_Store
+© 2021 GitHub, Inc.
+>>>>>>> e4ff9b0efb9721e465f2a7a7a09cd7006b178e5f

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Password Generator Starter Code
 
 # To-do
@@ -17,3 +18,24 @@ AS an employee with access to sensitive data:
 - Create a strong password that provides greater security
 
 # Website: https://rrayachhetri.github.io/password-generator/
+=======
+# Password Generator
+
+### Task
+
+Create an application that an employee can use to generate a random password based on criteria they’ve selected. List of required task below.
+
+- [x] Clean and polished user interface.
+- [x] Responsive - adapting to multiple screen sizes.
+- [x] Generated password include special characters.
+
+### User Story
+
+'AS AN employee with access to sensitive data
+I **WANT** to randomly generate a password that meets certain criteria
+SO **THAT** I can create a strong password that provides greater security.'
+
+### Website
+
+https://rrayachhetri.github.io/password-generator/
+>>>>>>> e4ff9b0efb9721e465f2a7a7a09cd7006b178e5f
