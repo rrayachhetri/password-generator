@@ -17,4 +17,9 @@ AS an employee with access to sensitive data:
 - I want to randomly generate a password that meets certain criteria 
 - Create a strong password that provides greater security
 
+# Built with
+- HTML5
+- CSS
+- Javascript
+
 # Website: https://rrayachhetri.github.io/password-generator/
