@@ -19,39 +19,35 @@ generateBtn.addEventListener("click", writePassword);
 
 // genratePassword () function starts here
 function generatePassword() {
-    var passwordCharacters = "";
-    var passwordLength = "";
+   // Assignment code here
+    var pChar = "";
+    var pLength= "";
 
     // set all criteria's to false until user says true
-    var lowerCaseOption = false,
-        upperCaseOption = false,
-        numericOption = false,
-        specialCharactersOption = false;
+    var lowercase = false,
+        uppercase = false,
+        numbers = false,
+        spclChr= false;
 
     // ask users the length of password
-    passwordLength = prompt(
+    pLength = window.prompt(
         "Please enter the length of the password, must be between 8 and 128"
     );
 
-    // verify password length
-    if (passwordLength >= 8 && passwordLength <= 128) {
+    // verify pLength
+    if (pLength >= 8 && pLength <= 128) {
         // prompt that asks user the way they would to have their passwords generated
-        lowerCaseOption = confirm("Do you want lowercase letters?");
-        upperCaseOption = confirm("Do you want uppercase letters?");
-        numericOption = confirm("Do you want numbers?");
-        specialCharactersOption = confirm("Do you want special characters?");
+        lowercase = window.confirm("Do you want lowercase?");
+        uppercase = window.confirm("Do you want uppercase?");
+        numbers = window.confirm("Do you want numbers?");
+        spclChr = window.confirm("Do you want the special characters?");
 
-        // confirm at least one chacter type has been chosen
-        if (
-            lowerCaseOption ||
-            upperCaseOption ||
-            numericOption ||
-            specialCharactersOption
-        ) {
-            return passwordCharacters = buildPassword(passwordLength, [lowerCaseOption, upperCaseOption, numericOption, specialCharactersOption]);
+        // confirm at least one character type has been choosen:
+        if ( lowercase||uppercase || numbers || spclChr ) {
+            return pChar = getPword(pLength, [lowercase, uppercase, numbers, spclChr]);
 
         } else {
-            // if not, let user know to select one
+            // if not,  user selects one
             alert("You need to pick at least one character type.");
         }
     } else {
@@ -60,38 +56,38 @@ function generatePassword() {
     }
 }
 
-function buildPassword(pLength, pOptions) {
+function getPword(pLength, pTYPE) {
     var generatedPassword = "";
-    const LOWERCASE_SET = "abcdefghijklmnopqrstuvwxyz";
-    const UPPERCASE_SET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const NUMERIC_SET = "0123456789";
-    const SPECIALCHAR_SET = "~`!@#$%^&*()_-+={[}]|:;<,>./?";
+    const lowercase = "abcdefghijklmnopqrstuvwxyz";
+    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numbers = "0123456789";
+    const spclChr = "~`!@#$%^&*()_-+={[}]|:;<,>./?";
 
     for (var i = 0; i < pLength; i++) {
-        var randomSet;
+        var any;
         do {
-            randomSet = Math.floor(Math.random() * pOptions.length);
-        } while (!pOptions[randomSet]);
+            any = Math.floor(Math.random() * pTYPE.length);
+        } while (!pTYPE[any]);
         // switch case for each varities
-        switch (randomSet) {
-            case 0:
-                generatedPassword +=
-                    LOWERCASE_SET[Math.floor(Math.random() * LOWERCASE_SET.length)];
-                break;
-
+        switch (any) {
             case 1:
                 generatedPassword +=
-                    UPPERCASE_SET[Math.floor(Math.random() * UPPERCASE_SET.length)];
+                    lowercase[Math.floor(Math.random() * lowercase.length)];
                 break;
 
             case 2:
                 generatedPassword +=
-                    NUMERIC_SET[Math.floor(Math.random() * NUMERIC_SET.length)];
+                    uppercase[Math.floor(Math.random() * uppercase.length)];
                 break;
 
             case 3:
                 generatedPassword +=
-                    SPECIALCHAR_SET[Math.floor(Math.random() * SPECIALCHAR_SET.length)];
+                    numbers[Math.floor(Math.random() * numbers.length)];
+                break;
+
+            case 4:
+                generatedPassword +=
+                    spclChr[Math.floor(Math.random() * spclChr.length)];
                 break;
         }
     }
